@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: Horrid-code/misterstillco-site
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "portfolio"
+    label: "Portfolio Pieces"
+    folder: "content/items"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Gallery Images", name: "gallery", widget: "list", field: { label: "Image", name: "image", widget: "image" }, required: false }
+      - { label: "Category / Season", name: "category", widget: "string", required: false }
+      - { label: "Description", name: "body", widget: "markdown" }
